@@ -18,4 +18,12 @@ public class Position {
     @Column(name = "nb_points")
     private Integer nbPoints;
 
+    @ManyToOne
+    private Course course;
+
+    @ManyToOne
+    private Pilote pilote;
+
+
+
 }

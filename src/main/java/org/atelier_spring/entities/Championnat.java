@@ -3,6 +3,8 @@ package org.atelier_spring.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Championnat {
 
@@ -13,5 +15,8 @@ public class Championnat {
     private Categorie categorie;
     private String libelleC;
     private int annee;
+
+    @ManyToMany(mappedBy = "championnats")
+    private List<Course> courses;
 
 }

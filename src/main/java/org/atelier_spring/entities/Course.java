@@ -1,12 +1,10 @@
 package org.atelier_spring.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Course {
@@ -16,4 +14,10 @@ public class Course {
     private long idCourse;
     private String emplacement;
     private LocalDate dateCourse;
+
+   @OneToMany(mappedBy = "course")
+    private List<Position> poistions;
+
+   @ManyToMany
+    private List<Championnat> championnats;
 }

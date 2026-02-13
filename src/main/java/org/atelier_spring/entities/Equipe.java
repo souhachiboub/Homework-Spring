@@ -1,12 +1,10 @@
 package org.atelier_spring.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Equipe implements Serializable {
@@ -18,5 +16,13 @@ public class Equipe implements Serializable {
     private int nbPointsTotal;
 
     private int classementGeneral;
+
+    @OneToMany(mappedBy = "equipe")
+    private List<Pilote> pilotes;
+
+    @OneToMany(mappedBy = "equipe")
+    private List<Contrat>  contracts;
+
+
 
 }

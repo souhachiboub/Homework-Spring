@@ -1,9 +1,8 @@
 package org.atelier_spring.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Sponsor {
@@ -14,4 +13,7 @@ public class Sponsor {
     private String pays;
     private float budgetAnnuel;
     private boolean bloquerContract;
+
+    @OneToMany(mappedBy = "sponsor")
+    private List<Contrat> contrats;
 }

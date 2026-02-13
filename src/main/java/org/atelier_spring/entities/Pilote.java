@@ -3,6 +3,8 @@ package org.atelier_spring.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Pilote {
 
@@ -15,4 +17,13 @@ public class Pilote {
 
     @Enumerated(EnumType.STRING)
     private Categorie categorie;
+
+
+    @ManyToOne
+    private Equipe equipe;
+
+    @OneToMany(mappedBy = "pilote")
+    private List<Position> positions;
+
+
 }

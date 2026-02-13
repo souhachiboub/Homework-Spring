@@ -1,10 +1,9 @@
 package org.atelier_spring.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Contrat {
@@ -14,5 +13,11 @@ public class Contrat {
     private float montant;
     private  String annee;
     private boolean archived;
+
+    @ManyToOne
+    private Equipe equipe;
+
+    @ManyToOne
+    private Sponsor sponsor;
 
 }
