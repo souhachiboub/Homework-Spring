@@ -1,5 +1,6 @@
 package org.atelier_spring.services;
 
+import lombok.AllArgsConstructor;
 import org.atelier_spring.entities.Sponsor;
 import org.atelier_spring.repositories.SponsorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class SponsorServiceImpl implements ISponsorService {
 
     private SponsorRepository sponsorRepository;

@@ -1,9 +1,9 @@
 package org.atelier_spring.repositories;
 
-import org.atelier_spring.entities.Championnat;
+import org.atelier_spring.entities.Pilote;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ChampionnatRepository extends JpaRepository<Championnat,Long> {
+public interface IPiloteRepository  extends JpaRepository<Pilote,Long> {
 }
