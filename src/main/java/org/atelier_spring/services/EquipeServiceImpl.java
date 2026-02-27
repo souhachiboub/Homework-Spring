@@ -13,6 +13,6 @@ public class EquipeServiceImpl implements IEquipeService{
     IEquipeRepository equipeRepository;
     @Override
     public Equipe ajouterEquipe(Equipe equipe) {
-        return null;
+        return equipeRepository.save(equipe);
     }
 }

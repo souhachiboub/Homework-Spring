@@ -2,15 +2,16 @@ package org.atelier_spring.services;
 
 import lombok.AllArgsConstructor;
 import org.atelier_spring.entities.Pilote;
-import org.atelier_spring.repositories.IPositionRepository;
+import org.atelier_spring.repositories.IPiloteRepository;
+
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class PiloteServiceImpl implements IPiloteService{
-    IPositionRepository piloteRepository;
+    IPiloteRepository piloteRepository;
     @Override
-    public String addPilote(Pilote p) {
-        return null;
+    public Pilote addPilote(Pilote p) {
+        return piloteRepository.save(p);
     }
 }
