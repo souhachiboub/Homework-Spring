@@ -16,7 +16,7 @@ public class Championnat {
     private String libelleC;
     private int annee;
 
-    @ManyToMany(mappedBy = "championnats")
+    @ManyToMany(mappedBy = "championnats",fetch = FetchType.EAGER)
     private List<Course> courses;
 
 }

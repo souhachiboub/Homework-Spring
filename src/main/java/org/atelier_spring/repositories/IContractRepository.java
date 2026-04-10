@@ -4,8 +4,10 @@ import org.atelier_spring.entities.Contrat;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.awt.*;
+import java.util.List;
+
 
 @Repository
 public interface IContractRepository extends JpaRepository<Contrat,Long> {
+    List<Contrat> findByArchivedFalse();
 }
