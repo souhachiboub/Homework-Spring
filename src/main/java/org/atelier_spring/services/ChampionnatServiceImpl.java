@@ -2,10 +2,13 @@ package org.atelier_spring.services;
 
 
 import lombok.AllArgsConstructor;
+import org.atelier_spring.dto.PiloteDTO;
 import org.atelier_spring.entities.Championnat;
 import org.atelier_spring.repositories.IChamionnatRepository;
 import org.atelier_spring.repositories.IDetailChampionnatRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -17,5 +20,12 @@ public class ChampionnatServiceImpl implements IChampionnatService{
     @Override
     public Championnat addChamionnatAndAssociatedCourses(Championnat championnat) {
         return chamionnatRepository.save(championnat);
+    }
+
+    @Override
+    public List<PiloteDTO> listeWinners(Integer annee) {
+
+            return chamionnatRepository.findWinnersAfterYear(annee);
+
     }
 }

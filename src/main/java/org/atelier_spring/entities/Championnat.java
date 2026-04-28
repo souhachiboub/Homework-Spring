@@ -25,5 +25,7 @@ public class Championnat {
 
     @OneToOne
     private DetailChampionnat detailChampionnatchampionnat;
+    @ManyToOne
+    private Pilote winner;
 
 }
