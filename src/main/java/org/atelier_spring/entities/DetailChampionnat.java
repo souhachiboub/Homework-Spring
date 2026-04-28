@@ -11,7 +11,6 @@ public class DetailChampionnat {
     private String code;
     private String Description;
 
-    @OneToOne
-    private Championnat championnat;
+
 
 }

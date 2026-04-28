@@ -2,10 +2,14 @@ package org.atelier_spring.entities;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class Championnat {
 
     @Id
@@ -18,5 +22,8 @@ public class Championnat {
 
     @ManyToMany(mappedBy = "championnats",fetch = FetchType.EAGER)
     private List<Course> courses;
+
+    @OneToOne
+    private DetailChampionnat detailChampionnatchampionnat;
 
 }

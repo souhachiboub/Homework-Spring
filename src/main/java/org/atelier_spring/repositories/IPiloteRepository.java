@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IPiloteRepository  extends JpaRepository<Pilote,Long> {
+    Pilote findByLibelleP(String libelle);
 }
