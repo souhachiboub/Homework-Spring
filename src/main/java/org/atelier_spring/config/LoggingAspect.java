@@ -17,5 +17,13 @@ public class LoggingAspect {
         String name = joinPoint.getSignature().getName();
         log.info("In method " + name + " : ");
     }
+
+    @After("execution(* org.atelier_spring.services.*.*(..))")
+    public void logMethodExit(JoinPoint joinPoint) {
+        String name = joinPoint.getSignature().getName();
+        log.info("Out of method " + name + " : ");
+    }
+
+
    
 }
