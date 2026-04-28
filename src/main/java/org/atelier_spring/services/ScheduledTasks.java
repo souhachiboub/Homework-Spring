@@ -18,7 +18,7 @@ public class ScheduledTasks {
 
     private final IContractRepository contratRepository;
     private final SponsorRepository sponsorRepository;
-    @Scheduled(fixedRate = 30000)
+   // @Scheduled(fixedRate = 30000)
     public void archiverContratsExpireesEtAffichageContratsActifsParEquipe() {
         int currentYear = LocalDate.now().getYear();
 
